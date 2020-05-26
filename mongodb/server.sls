@@ -3,7 +3,7 @@
 {%- if server.get('enabled', False) %}
 mongodb_packages:
   pkg.installed:
-  - names: {{ server.pkgs }}
+  - names: {{ server.pkgs|yaml }}
 
 /etc/mongodb.conf:
   file.managed:
